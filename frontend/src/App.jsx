@@ -12,7 +12,7 @@ function App() {
       <nav className="bg-gradient-to-r from-emerald-600 to-orange-500 shadow-lg px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-2xl font-bold text-white tracking-tight">
-            Shop<span className="text-orange-200">Ease</span>
+            V<span className="text-orange-200">Kart</span>
           </span>
         </div>
         <div className="flex gap-4">
@@ -54,7 +54,7 @@ function HomePage() {
       <div className="w-full bg-gradient-to-r from-emerald-600 to-orange-400 rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-between">
         <div className="text-white max-w-lg">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Welcome to <span className="text-orange-200">ShopEase</span>
+            Welcome to <span className="text-orange-200">VKart</span>
           </h1>
           <p className="text-lg mb-6">
             Discover the best deals on electronics, apparel, books, and more.

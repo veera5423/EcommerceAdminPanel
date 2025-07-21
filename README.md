@@ -1,4 +1,4 @@
-# ShopEase E-Commerce Admin Panel
+# VKart E-Commerce Admin Panel
 
 A modern, full-stack E-Commerce Admin Panel for product management, built with React (Vite, Zustand, Tailwind CSS) and Node.js/Express/MongoDB.
 

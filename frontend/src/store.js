@@ -26,12 +26,18 @@ export const useProductStore = create((set, get) => ({
   setError: (error) => set({ error }),
 
   // CRUD actions with actual API calls using axios instance
-  getProducts: async () => {
+    getProducts: async () => {
     set({ loading: true, error: null });
     try {
-      const res = await api.get('/api/products');
-      set({ products: res.data });
-    } catch {
+      const res = await api.get('/api/products/');
+      if (Array.isArray(res.data)) {
+        set({ products: res.data });
+      } else {
+        console.error('API did not return an array for products:', res.data);
+        set({ products: [], error: 'Received invalid data from server' });
+      }
+    } catch (err) {
+      console.error('Failed to fetch products:', err);
       set({ error: 'Failed to fetch products' });
     } finally {
       set({ loading: false });
@@ -42,7 +48,7 @@ export const useProductStore = create((set, get) => ({
     setLoading(true);
     setError(null);
     try {
-      await api.post('/api/products', {
+      await api.post('/api/products/', {
         productName: form.productName,
         description: form.description,
         price: parseFloat(form.price),

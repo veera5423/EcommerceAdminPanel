@@ -12,7 +12,7 @@ function App() {
       <nav className="bg-gradient-to-r from-emerald-600 to-orange-500 shadow-lg px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="text-2xl font-bold text-white tracking-tight">
-            Shop<span className="text-orange-200">Ease</span>
+            V<span className="text-orange-200">Kart</span>
           </span>
         </div>
         <div className="flex gap-4">
@@ -34,6 +34,12 @@ function App() {
           </button>
         </div>
       </nav>
+      {/* Marquee Banner */}
+      <div className="bg-yellow-300 text-yellow-800 font-bold text-center py-2 overflow-hidden whitespace-nowrap">
+        <div className="animate-marquee">
+          <span> <marquee behavior="" direction="">This project is for the admin operations.</marquee> </span>
+        </div>
+      </div>
       {/* Main Content */}
       <main className="flex-1 max-w-7xl mx-auto py-8 px-2 w-full">
         {page === "home" ? <HomePage /> : <AdminPanel />}
@@ -47,14 +53,14 @@ function HomePage() {
   const { products, getProducts } = useProductStore();
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [getProducts]);
   return (
     <div className="flex flex-col items-center gap-10">
       {/* Hero Section */}
       <div className="w-full bg-gradient-to-r from-emerald-600 to-orange-400 rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center justify-between">
         <div className="text-white max-w-lg">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-            Welcome to <span className="text-orange-200">ShopEase</span>
+            Welcome to <span className="text-orange-200">VKart</span>
           </h1>
           <p className="text-lg mb-6">
             Discover the best deals on electronics, apparel, books, and more.
